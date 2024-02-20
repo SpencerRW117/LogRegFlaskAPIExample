@@ -14,7 +14,7 @@ def preprocess_data(dataframe):
     This implies that we would need to mimic all preprocessing/feature engineering from training.
 
     '''
-    return 
+    return dataframe
 
 
 
@@ -35,9 +35,6 @@ def predict():
         df = preprocess_data(df)
         # Make predictions and add them to the df.
         df['phat'] = logit_model.predict(df)
-        # Business outcome of belonging to the positive class is
-        # defined with a 75% threshold in the jupyter notebook. 
-        df['business_outcome'] = (df['phat'] > 0.75).astype(int)
         # Sort the columns alphabetically 
         df = df.reindex(sorted(df.columns), axis=1)
         # Return predictions as JSON
