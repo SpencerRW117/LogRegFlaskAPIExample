@@ -12,8 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY redacted_model_app.py .
 COPY model.pkl .
 
-# Expose port 1313
+# Expose port 8080
 EXPOSE 8080
 
-# Define the command to run your application
-CMD ["python3", "LR_Model_App.py"]
+CMD ["python3", "LR_App.py"]
